@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Calendar;
+use APP\Record;
 
 class CalendarController extends Controller
 {
@@ -23,5 +24,11 @@ class CalendarController extends Controller
         $calendar->description = $request->description;
         $calendar->save();
         
+    }
+    public function index(Request $request)
+    {
+    $cal = new Record();
+    $tag = $cal->showCalendarTag($request->month, $request->year);
+        return view('admin.profile.index' , ['cal_tag' => $tag]);
     }
 }
