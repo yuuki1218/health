@@ -21,11 +21,13 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function()
         Route::get('profile/edit' , 'Admin\ProfileController@edit');
         Route::post('profile/create' , 'Admin\ProfileController@create');
         Route::post('profile/edit' , 'Admin\ProfileController@update');
-        Route::get('profile/record' , 'Admin\CalendarController@record');
-        Route::post('profile/record' , 'Admin\CalendarController@postrecord');
-        Route::get('profile/index' , 'Admin\CalendarController@index');
     });
-
+Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function()
+    {
+        Route::get('calendar/record' , 'Admin\CalendarController@record');
+        Route::post('calendar/record' , 'Admin\CalendarController@postrecord');
+        Route::get('calendar/index' , 'Admin\CalendarController@index');
+    });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
