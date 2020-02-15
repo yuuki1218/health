@@ -32,7 +32,7 @@ class CalendarController extends Controller
     public function index(Request $request)
     {
     $list = Calendar::all();
-    $cal = new Record();
+    $cal = new Record($list);
     $tag = $cal->showCalendarTag($request->month, $request->year);
         return view('admin.calendar.index' , ['cal_tag' => $tag]);
     }
