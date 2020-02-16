@@ -12,11 +12,12 @@
     <div class="form-group">
     {{csrf_field()}}
     <label for="day">日付 </label>
-    <input type="text" name="day" class="form-control" id="day">
+    <input type="text" name="day" class="form-control" id="day" value="{{ $data->day }}">
     <label for="description">説明</label>
-    <input type="text" name="description" class="form-control" id="description"> 
+    <input type="text" name="description" class="form-control" id="description" value="{{ $data->description }}"> 
     </div>
     <button type="submit" class="btn btn-primary">登録</button> 
+    <input type="hidden" neme="id" value="{{ $data->id }}">
     </form> 
     <!-- 休日一覧表示 -->
     <table class="table">
@@ -35,6 +36,7 @@
         <td>{{$val->description}}</td>
         <td>{{$val->created_at}}</td>
         <td>{{$val->updated_at}}</td>
+        <th scope="row"><a href="{{ url('/admin/calendar/record/'.$val->id) }}">{{ $val->day }}</a></th>
     </tr>
     @endforeach
     </tbody>

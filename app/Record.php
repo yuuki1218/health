@@ -33,9 +33,9 @@ class Record
         $day = 1 - $firstWeekDay;
         $this->html = <<< EOS
 <h1>
-<a class="btn btn-primary" href="/?year={$prev_year}&month={$prev_month}" role="botton">&lt;前月</a>
+<a class="btn btn-primary" href="/admin/calendar/index?year={$prev_year}&month={$prev_month}" role="botton">&lt;前月</a>
 {$year}年{$month}月
-<a class="btn btn-primary" href="/?year={$next_year}&month={$next_month}" role="botton">&gt;翌月</a>
+<a class="btn btn-primary" href="/admin/calendar/index?year={$next_year}&month={$next_month}" role="botton">翌月&gt;</a>
 </h1>
 <table class="table table-bordered">
 <tr>

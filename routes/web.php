@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function()
         Route::get('calendar/record' , 'Admin\CalendarController@record');
         Route::post('calendar/record' , 'Admin\CalendarController@postrecord');
         Route::get('calendar/index' , 'Admin\CalendarController@index');
+        Route::get('calendar/record/{id}' , 'Admin\CalendarController@update');
     });
 Auth::routes();
 
