@@ -17,6 +17,17 @@ class CalendarController extends Controller
         $list = Calendar::all();
         return view('admin.calendar.record' , ['list' => $list, 'data' => $data]);
     }
+     public function update($id)
+    {
+        //休日のデータを取得
+        $data = new Calendar();
+        if(isset($id))
+        {
+            $data = Calendar::where('id' , '=' , $id )->first();
+        }
+        $list = Calendar::all();
+        return view('admin.calendar.record' , ['list' => $list, 'data' => $data]);
+    }
     
     public function postrecord(Request $request)
     {
@@ -24,7 +35,6 @@ class CalendarController extends Controller
         if(isset($request->id)) 
         {
             $calendar = Calendar::where('id', '=', $request->id)->first();
-            $calendar->day = $request->day;
             $form = $request->all();
             unset($form['_token']);
             $calendar->fill($form);
@@ -48,15 +58,16 @@ class CalendarController extends Controller
         return view('admin.calendar.index' , ['cal_tag' => $tag]);
     }
     
-    public function update($id)
+    public function deleterecord(Request $request)
     {
-        //休日のデータを取得
-        $data = new Calendar();
-        if(isset($id))
+        if(isset($request->id))
         {
-            $data = Calendar::where('id' , '=' , $id )->first();
+            $calendar = Calendar::where('id', '=', $request->id)->first();
+            $calendar->delete();
+            
         }
+        $data = new Calendar();
         $list = Calendar::all();
-        return view('admin.calendar.record' , ['list' => $list, 'data' => $data]);
+        return view('calendar.record',['list' => $list, 'data' => $data]);
     }
 }

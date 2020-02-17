@@ -28,6 +28,8 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function()
         Route::post('calendar/record' , 'Admin\CalendarController@postrecord');
         Route::get('calendar/index' , 'Admin\CalendarController@index');
         Route::get('calendar/record/{id}' , 'Admin\CalendarController@update');
+        Route::delete('calendar/record' , 'Admin\CalendarController@deleterecord');
+        
     });
 Auth::routes();
 

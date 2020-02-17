@@ -36,6 +36,12 @@
         <td>{{$val->description}}</td>
         <td>{{$val->created_at}}</td>
         <td>{{$val->updated_at}}</td>
+        <td><form"{{ action('Admin\CalendarController@deleterecord') }}"
+          <input type="hidden" name="id" value="{{ $val->id }}">
+            {{ method_field('delete') }}
+            {{ csrf_field() }}
+            <button class="btn btn-default" type="submit">削除</button>
+            </form></td>
         <th scope="row"><a href="{{ url('/admin/calendar/record/'.$val->id) }}">{{ $val->day }}</a></th>
     </tr>
     @endforeach
