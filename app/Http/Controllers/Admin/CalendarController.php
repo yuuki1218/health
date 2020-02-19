@@ -31,20 +31,26 @@ class CalendarController extends Controller
     
     public function postrecord(Request $request)
     {
+        {
+            $validateData = $request->validate([
+                'day' => 'required|date_format:Y-m-d',
+                'description' => 'required',
+                ]);
+        }
         //POSTで受信した記録のデータの登録
         if(isset($request->id)) 
         {
-            $calendar = Calendar::where('id', '=', $request->id)->first();
+            $calendar = Calendar::find($request->id);
             $form = $request->all();
             unset($form['_token']);
-            $calendar->fill($form);
-            $calendar->save();
+            $calendar=fill($form)->save();
+            
         } else {
         $calendar = new Calendar();
         $form = $request->all();
         unset($form['_token']);
-        $calendar->fill($form);
-        $calendar->save();
+        $calendar=fill($form)->save();
+       
         }
         $data = new Calendar();
         $list = Calendar::all();
@@ -60,14 +66,16 @@ class CalendarController extends Controller
     
     public function deleterecord(Request $request)
     {
+        //デリートで受信したデータの削除
         if(isset($request->id))
         {
-            $calendar = Calendar::where('id', '=', $request->id)->first();
+            $calendar = Calendar::find($request->id);
             $calendar->delete();
             
         }
+        //データの取得
         $data = new Calendar();
         $list = Calendar::all();
-        return view('calendar.record',['list' => $list, 'data' => $data]);
+        return view('admin.calendar.record',['list' => $list, 'data' => $data]);
     }
 }

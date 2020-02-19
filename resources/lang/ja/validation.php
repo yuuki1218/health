@@ -151,6 +151,7 @@ return [
             'birthday' => '誕生日',
             'age' => '年齢',
             'goal' => '目標',
-            ],
+            'day' => '日付',
+        'description' => '説明'],
 
 ];

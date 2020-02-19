@@ -8,9 +8,18 @@
 </script>
     <h1>休日設定</h1>
     <!-- 休日入力フォーム -->
-    <form "{{ action('Admin\CalendarController@postrecord') }}" method="post" enctype="mutipart/form-data"> 
+    <form method="POST" action= "/admin/calendar/record">
     <div class="form-group">
     {{csrf_field()}}
+    @if ($errors->any())
+       <div class = "alert alert-danger">
+           <ul>
+               @foreach ($errors->all() as $error)
+               <li>{{ $error }}</li>
+               @endforeach
+           </ul>
+       </div>
+       @endif
     <label for="day">日付 </label>
     <input type="text" name="day" class="form-control" id="day" value="{{ $data->day }}">
     <label for="description">説明</label>
@@ -19,6 +28,7 @@
     <button type="submit" class="btn btn-primary">登録</button> 
     <input type="hidden" neme="id" value="{{ $data->id }}">
     </form> 
+    
     <!-- 休日一覧表示 -->
     <table class="table">
     <thead>
@@ -32,17 +42,16 @@
     <tbody>
     @foreach($list as $val)
     <tr>
-        <th scope="row">{{$val->day}}</th>
+        <th scope="row"><a href="{{ url('/admin/calendar/record/'.$val->id) }}">{{ $val->day }}</a></th>
         <td>{{$val->description}}</td>
         <td>{{$val->created_at}}</td>
         <td>{{$val->updated_at}}</td>
-        <td><form"{{ action('Admin\CalendarController@deleterecord') }}"
-          <input type="hidden" name="id" value="{{ $val->id }}">
+       <td><form "{{ action('Admin\CalendarController@deleterecord') }}" method="post" enctype="mutipart/form-data"> 
+            <input type="hidden" name="id" value="{{$val->id}}">
             {{ method_field('delete') }}
-            {{ csrf_field() }}
+            {{csrf_field()}} 
             <button class="btn btn-default" type="submit">削除</button>
-            </form></td>
-        <th scope="row"><a href="{{ url('/admin/calendar/record/'.$val->id) }}">{{ $val->day }}</a></th>
+        </form></td>
     </tr>
     @endforeach
     </tbody>
