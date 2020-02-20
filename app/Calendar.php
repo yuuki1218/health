@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Calendar extends Model
 {
-     protected $fillable = array('day' , 'description');
+     protected $guarded = array('id');
+     
+     public static $rules = array(
+         'day' => 'required',
+         'description' => 'required',
+         );
 }

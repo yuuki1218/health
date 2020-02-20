@@ -64,24 +64,27 @@ class CalendarController extends Controller
         return view('admin.calendar.record',['list' => $list, 'data' => $data]);
     }
     
-       public function edit($id)
+       public function edit(Request $request)
     {
         //休日のデータを取得
-        $data = new Calendar();
-        if(isset($id))
-        {
-            $data = Calendar::find($id);
-        }
-        $list = Calendar::all();
-        return view('admin.calendar.edit' , ['list' => $list, 'data' => $data]);
+       $calendar = Calendar::find($request->id);
+       if (empty($calendar)){
+           abort(404);
+       }
+       return view('admin.calendar.edit' , ['form' => $calendar]);
     }
     
         public function update(Request $request)
            {
+            $this->validate($request, Calendar::$rules);
+                
             $calendar = Calendar::find($request->id);
+            
             $form = $request->all();
             unset($form['_token']);
             $calendar->fill($form)->save();
+
+            return redirect('admin/calendar/record');
            }
             
 }
