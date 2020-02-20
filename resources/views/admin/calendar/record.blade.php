@@ -8,7 +8,7 @@
 </script>
     <h1>休日設定</h1>
     <!-- 休日入力フォーム -->
-    <form method="POST" action= "/admin/calendar/record">
+    <form "{{ action('Admin\CalendarController@postrecord') }}" method="post" enctype="mutipart/form-data">
     <div class="form-group">
     {{csrf_field()}}
     @if ($errors->any())
@@ -21,12 +21,11 @@
        </div>
        @endif
     <label for="day">日付 </label>
-    <input type="text" name="day" class="form-control" id="day" value="{{ $data->day }}">
+    <input type="text" name="day" class="form-control" id="day">
     <label for="description">説明</label>
-    <input type="text" name="description" class="form-control" id="description" value="{{ $data->description }}"> 
+    <input type="text" name="description" class="form-control" id="description"> 
     </div>
     <button type="submit" class="btn btn-primary">登録</button> 
-    <input type="hidden" neme="id" value="{{ $data->id }}">
     </form> 
     
     <!-- 休日一覧表示 -->
@@ -42,7 +41,7 @@
     <tbody>
     @foreach($list as $val)
     <tr>
-        <th scope="row"><a href="{{ url('/admin/calendar/record/'.$val->id) }}">{{ $val->day }}</a></th>
+        <th scope="row"><a href="{{ url('/admin/calendar/edit/'.$val->id) }}">{{ $val->day }}</a></th>
         <td>{{$val->description}}</td>
         <td>{{$val->created_at}}</td>
         <td>{{$val->updated_at}}</td>

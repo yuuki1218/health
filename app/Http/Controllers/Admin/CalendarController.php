@@ -10,6 +10,7 @@ use Carbon\Carbon;
 
 class CalendarController extends Controller
 {
+   
     public function record(Request $request)
     {
         //記録のデータを取得
@@ -17,50 +18,34 @@ class CalendarController extends Controller
         $list = Calendar::all();
         return view('admin.calendar.record' , ['list' => $list, 'data' => $data]);
     }
-     public function update($id)
-    {
-        //休日のデータを取得
-        $data = new Calendar();
-        if(isset($id))
-        {
-            $data = Calendar::where('id' , '=' , $id )->first();
-        }
-        $list = Calendar::all();
-        return view('admin.calendar.record' , ['list' => $list, 'data' => $data]);
-    }
     
+   
     public function postrecord(Request $request)
     {
         {
+            //バリデーション
             $validateData = $request->validate([
                 'day' => 'required|date_format:Y-m-d',
                 'description' => 'required',
                 ]);
         }
+        
         //POSTで受信した記録のデータの登録
-        if(isset($request->id)) 
-        {
-            $calendar = Calendar::find($request->id);
-            $form = $request->all();
-            unset($form['_token']);
-            $calendar=fill($form)->save();
-            
-        } else {
         $calendar = new Calendar();
-        $form = $request->all();
-        unset($form['_token']);
-        $calendar=fill($form)->save();
-       
-        }
+        $form2 = $request->all();
+        unset($form2['_token']);
+        $calendar->fill($form2)->save();
+        
         $data = new Calendar();
         $list = Calendar::all();
         return view('admin.calendar.record', ['list' => $list, 'data' => $data]);
     }
+    
     public function index(Request $request)
     {
-    $list = Calendar::all();
-    $cal = new Record($list);
-    $tag = $cal->showCalendarTag($request->month, $request->year);
+        $list = Calendar::all();
+        $cal = new Record($list);
+        $tag = $cal->showCalendarTag($request->month, $request->year);
         return view('admin.calendar.index' , ['cal_tag' => $tag]);
     }
     
@@ -78,4 +63,25 @@ class CalendarController extends Controller
         $list = Calendar::all();
         return view('admin.calendar.record',['list' => $list, 'data' => $data]);
     }
+    
+       public function edit($id)
+    {
+        //休日のデータを取得
+        $data = new Calendar();
+        if(isset($id))
+        {
+            $data = Calendar::find($id);
+        }
+        $list = Calendar::all();
+        return view('admin.calendar.edit' , ['list' => $list, 'data' => $data]);
+    }
+    
+        public function update(Request $request)
+           {
+            $calendar = Calendar::find($request->id);
+            $form = $request->all();
+            unset($form['_token']);
+            $calendar->fill($form)->save();
+           }
+            
 }

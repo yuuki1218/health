@@ -6,7 +6,7 @@ class Record
     private $calendars;
     function __construct($calendars)
     {
-        $this->records = $calendars;
+        $this->calendars = $calendars;
     }
     private $html;    
     public function showCalendarTag($m, $y)
@@ -59,13 +59,15 @@ EOS;
                     $this->html .= "<td>&nbsp;</td>";
                 } else {
                    $this->html.="<td>" . $day ."&nbsp";
-        $target = date("Y-m-d" , mktime(0, 0, 0, $month, $day, $year));
-        foreach ($this->records as $val)
+                   $target = date("Y-m-d" , mktime(0, 0, 0, $month, $day, $year));
+        foreach ($this->calendars as $val)
         {
-            if($val->day == $target) 
+            if($val->day == $target)
             {
-                $this->html.=$val->description;
-                break;
+                $this->html.= $val->description;
+                 $this->html.="<br>";
+                
+                
             }
         }
         $this->html .="</td>";
