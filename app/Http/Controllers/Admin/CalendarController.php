@@ -77,9 +77,7 @@ class CalendarController extends Controller
         public function update(Request $request)
            {
             $this->validate($request, Calendar::$rules);
-                
             $calendar = Calendar::find($request->id);
-            
             $form = $request->all();
             unset($form['_token']);
             $calendar->fill($form)->save();

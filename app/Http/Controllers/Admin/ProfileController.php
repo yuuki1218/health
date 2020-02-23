@@ -44,5 +44,11 @@ class ProfileController extends Controller
        $profile->fill($profile_form)->save();
         return redirect('admin/profile/edit');
     }
+    
+    public function index(Request $request)
+    {
+        $posts = Profile::all();
+        return view('admin.profile.index' , ['posts' => $posts]);
+    }
   
 }

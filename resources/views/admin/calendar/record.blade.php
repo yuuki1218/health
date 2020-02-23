@@ -1,5 +1,5 @@
 @extends('layouts.calendar')
-@section('title', '休日設定')
+@section('title', '記録設定')
 @section('content')
     <script>
   $( function() {
@@ -7,7 +7,7 @@
   } );
 </script>
     <h1>休日設定</h1>
-    <!-- 休日入力フォーム -->
+    <!-- 記録入力フォーム -->
     <form "{{ action('Admin\CalendarController@postrecord') }}" method="post" enctype="mutipart/form-data">
     <div class="form-group">
     {{csrf_field()}}
@@ -22,13 +22,16 @@
        @endif
     <label for="day">日付 </label>
     <input type="text" name="day" class="form-control" id="day">
+    
     <label for="description">説明</label>
     <input type="text" name="description" class="form-control" id="description"> 
+    
     </div>
+    
     <button type="submit" class="btn btn-primary">登録</button> 
     </form> 
     
-    <!-- 休日一覧表示 -->
+    <!-- 記録一覧表示 -->
     <table class="table">
     <thead>
     <tr>
