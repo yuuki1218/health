@@ -6,8 +6,11 @@
     $( "#day" ).datepicker({dateFormat: 'yy-mm-dd'});
   } );
 </script>
+<div class="row">
+    <div class="col-md-8 mx-auto">
     <h1>記録設定</h1>
     <!-- 記録入力フォーム -->
+    
     <form "{{ action('Admin\CalendarController@postrecord') }}" method="post" enctype="mutipart/form-data">
     <div class="form-group">
     {{csrf_field()}}
@@ -29,9 +32,13 @@
     </div>
     
     <button type="submit" class="btn btn-primary">登録</button> 
-    </form> 
+    </form>
+    </div>
+    </div>
     
     <!-- 記録一覧表示 -->
+    <div class="row">
+    <div class="col-md-8 mx-auto">
     <table class="table">
     <thead>
     <tr>
@@ -58,5 +65,7 @@
     @endforeach
     </tbody>
     </table>
+    </div>
+    </div>
     <a href="{{ url('/admin/calendar/index') }}">カレンダーに戻る</a>
 @endsection
