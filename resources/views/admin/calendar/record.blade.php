@@ -6,7 +6,7 @@
     $( "#day" ).datepicker({dateFormat: 'yy-mm-dd'});
   } );
 </script>
-    <h1>休日設定</h1>
+    <h1>記録設定</h1>
     <!-- 記録入力フォーム -->
     <form "{{ action('Admin\CalendarController@postrecord') }}" method="post" enctype="mutipart/form-data">
     <div class="form-group">

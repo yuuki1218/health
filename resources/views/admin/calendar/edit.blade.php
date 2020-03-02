@@ -9,7 +9,7 @@
   } );
 </script>
     <h1>編集画面</h1>
-    <!-- 休日入力フォーム -->
+    <!-- 入力フォーム -->
     <form action="{{ action('Admin\CalendarController@update') }}" method="post" enctype="mutipart/form-data">
     {{csrf_field()}}
     @if (count($errors) >0)
