@@ -49,8 +49,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'ProfileController@index');
-Route::get('/calendar', 'CalendarController@index');
+Route::get('/profile', 'ProfileController@index');
+Route::get('/', 'CalendarController@index');
 
 
 
