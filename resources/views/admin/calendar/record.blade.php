@@ -67,5 +67,9 @@
     </table>
     </div>
     </div>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
     <a href="{{ url('/admin/calendar/index') }}">カレンダーに戻る</a>
+      </div>
+    </div>
 @endsection
