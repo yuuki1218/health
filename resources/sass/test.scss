@@ -1,0 +1,36 @@
+header h1 {
+    color: red;
+    font-size: 300%;
+}
+
+.caution{
+    color:blue;
+}
+
+body {
+    background-color: #000;
+}
+
+input[type="text"]{
+    background-color: #fcc;
+}
+
+main h1+p{
+    color: white;
+}
+
+main>h2 {
+    color: blue;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    
+    border-width: 5px;
+    border-style: dotted;
+    border-color: red;
+    
+    
+}

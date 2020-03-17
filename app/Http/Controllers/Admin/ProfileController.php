@@ -37,18 +37,22 @@ class ProfileController extends Controller
     
     public function update(Request $request)
     {
-       $this->validate($request, Profile::$rules);
-       $profile = Profile::find($request->id);
-       $profile_form = $request->all();
-       unset($profile_form['_token']);
-       $profile->fill($profile_form)->save();
+        $this->validate($request, Profile::$rules);
+        $profile = Profile::find($request->id);
+        $profile_form = $request->all();
+        unset($profile_form['_token']);
+        $profile->fill($profile_form)->save();
         return redirect('admin/profile/index');
     }
     
     public function index(Request $request)
     {
         $posts = Profile::all();
-        return view('admin.profile.index' , ['posts' => $posts]);
+        return view('admin.profile.index', ['posts' => $posts]);
     }
-  
+    
+    public function test()
+    {
+        return view('admin.profile.test');
+    }
 }

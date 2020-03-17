@@ -14,6 +14,11 @@ class CalendarController extends Controller
         $list = Calendar::all();
         $cal = new Record($list);
         $tag = $cal->showCalendarTag($request->month, $request->year);
-        return view('calendar.index',['cal_tag' => $tag]);
+        return view('calendar.index', ['cal_tag' => $tag]);
+    }
+    
+    public function home()
+    {
+        return view('calendar.home');
     }
 }

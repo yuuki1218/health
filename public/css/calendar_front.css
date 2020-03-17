@@ -39,3 +39,37 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
+.button {
+  margin-top: 20px;
+}
+
+.link {
+  color: black;
+}
+
+.str {
+  color: black;
+}
+
+.box {
+  width: 200px;
+  height: 80px;
+  background-color: silver;
+  margin: 20px;
+  text-align: center;
+  line-height: 80px;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 80px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 20px;
+}
+
