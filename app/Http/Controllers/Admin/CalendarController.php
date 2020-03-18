@@ -81,9 +81,4 @@ class CalendarController extends Controller
 
         return redirect('admin/calendar/record');
     }
-           
-    public function home()
-    {
-        return view('calendar.home');
-    }
 }

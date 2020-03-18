@@ -9,7 +9,7 @@ body {
 .navbar-laravel {
     background-color: #EEEFFFF;
     box: 0 2px 4px rgba(0, 0, 0, 0.04);
-       font-size: 20px;
+     font-size: 20px;
 }
 
 .navbar-brand {
@@ -31,10 +31,12 @@ body {
 
 .login-box {
     background-color: rgba(0, 0, 0, 0);
+
 }
 
 .login-header {
     background-color: rgba(0, 0, 0, 0.25);
+    
 }
 
 .login-body {
@@ -49,8 +51,9 @@ body {
     color: black;
 }
 
-.str{
+.sub-link{
     color: black;
+    
     
      
  
@@ -61,10 +64,17 @@ body {
     width: 200px;
     height: 80px;
     background-color: silver;
+    border: 2px solid black;
     margin: 20px ;
-   text-align: center;
-  line-height: 80px;
+    text-align: center;
+    line-height: 80px;
+}
 
+.box:hover {
+    background-color: #fff;
+    border-color: #59bleb;
+    color: #59bleb;
+    transition: 0.5s;
 }
 
 header {
@@ -96,7 +106,4 @@ h2{
 p {
     font-size: 10px ;
 }
-
-
-
 

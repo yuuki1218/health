@@ -48,7 +48,7 @@ body {
   color: black;
 }
 
-.str {
+.sub-link {
   color: black;
 }
 
@@ -56,9 +56,17 @@ body {
   width: 200px;
   height: 80px;
   background-color: silver;
+  border: 2px solid black;
   margin: 20px;
   text-align: center;
   line-height: 80px;
+}
+
+.box:hover {
+  background-color: #fff;
+  border-color: #59b leb;
+  color: #59b leb;
+  transition: 0.5s;
 }
 
 header {

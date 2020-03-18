@@ -3,13 +3,14 @@
 @section('title', 'プロフィール')
 
 @section('content')
+<body>
      <div class="container">
          <div class="row">
              <div class="col-md-8 mx-auto">
                  <h2>プロフィール</h2>
              </div>
          </div>
-                             <table class="table table">
+                             <table class="table">
                                  <thead>
                                      <tr>
                                          <th width="20">名前</th>
@@ -31,5 +32,9 @@
                                      @endforeach
                                  </tbody>
                              </<table>
-             </div>
+     </div>
+</body>
+     <div class="row">
+          <a class="link"  href="{{ url('/admin/profile/edit?id=1') }}">プロフィール編集画面</a>
+     </div>
 @endsection
