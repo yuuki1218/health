@@ -17,6 +17,7 @@ class CreateCalendarsTable extends Migration
             $table->bigIncrements('id');
             $table->date('day');
             $table->string('description');
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }

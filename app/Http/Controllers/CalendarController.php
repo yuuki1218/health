@@ -19,6 +19,7 @@ class CalendarController extends Controller
     
     public function home()
     {
-        return view('calendar.home');
+        $image = "avenue-2215317_1280.jpg";
+        return view('calendar.home', ['image' => $image]);
     }
 }

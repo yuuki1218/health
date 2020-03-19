@@ -93,3 +93,16 @@ p {
   font-size: 10px;
 }
 
+body {
+  background: url(/images/cyclist-3202481_1280.jpg?d0b42d750a64160d84bbaa2b3a025ac5);
+  background-size: cover;
+}
+
+.table-bordered {
+  background-color: #FFCC99;
+}
+
+td:hover {
+  background-color: white;
+}
+

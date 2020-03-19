@@ -17,7 +17,6 @@
      </div>
 </header>
 <body>
-    <img src="avenue-2215317_1280.jpg" alt="green">
      <div class="row">
          <div class="col-md-5 mx-auto">
               <h3><div class="box"><span><a class="sub-link"  href="{{ url('/admin/calendar/record') }}">記録の入力画面</a></span></div></h3>

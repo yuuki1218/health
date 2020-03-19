@@ -13,11 +13,11 @@ body {
 }
 
 .navbar-brand {
-    color: #000 !important;
+    color: white !important;
 }
 
 .nav-link {
-    color: #000 !important;
+    color: white !important;
 }
 
 .table-dark {
@@ -47,15 +47,16 @@ body {
     margin-top: 20px;
 }
 
+body {
+    background: url("avenue-2215317_1280.jpg");
+}
 .link {
-    color: black;
+    color: white;
 }
 
 .sub-link{
     color: black;
     
-    
-     
  
 }
 
@@ -63,7 +64,7 @@ body {
     
     width: 200px;
     height: 80px;
-    background-color: silver;
+    background-color: #FFCC99;
     border: 2px solid black;
     margin: 20px ;
     text-align: center;
@@ -84,7 +85,7 @@ header {
 .content {
     width: 920px;
     margin: 0 auto 40px auto;
-    background-color: silver;
+    color: white;
 }
 
 .header-title-area {
@@ -102,8 +103,12 @@ header {
 }
 h2{
     font-size : 20px;
+    color: white;
 }
 p {
     font-size: 10px ;
+    color: white;
 }
+
+
 
