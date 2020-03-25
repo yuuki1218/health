@@ -90,9 +90,16 @@ header {
 .text-sub {
     margin: 10px;
 }
+
+h1 {
+    margin: 10px;
+    font-size: 40px;
+}
+
 h2{
     font-size : 20px;
 }
+
 p {
     font-size: 10px ;
 }
@@ -109,6 +116,11 @@ body {
 
 td:hover {
      background-color: white;	
+}
+
+.form-group {
+    margin: 30px 50px 20px 0px;
+    font-size: 20px;
 }
 
 

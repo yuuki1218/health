@@ -17,4 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/admin.scss', 'public/css')
     .sass('resources/sass/profile_front.scss', 'public/css')
     .sass('resources/sass/calendar_front.scss', 'public/css')
-    .sass('resources/sass/test.scss', 'public/css');
+    .sass('resources/sass/test.scss', 'public/css')
+    .sass('resources/sass/diary.scss', 'public/css');

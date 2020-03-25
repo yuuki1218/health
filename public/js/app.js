@@ -49487,6 +49487,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/diary.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/diary.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/home.scss":
 /*!**********************************!*\
   !*** ./resources/sass/home.scss ***!
@@ -49521,9 +49532,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/home.scss ./resources/sass/admin.scss ./resources/sass/profile_front.scss ./resources/sass/calendar_front.scss ./resources/sass/test.scss ***!
-  \************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/home.scss ./resources/sass/admin.scss ./resources/sass/profile_front.scss ./resources/sass/calendar_front.scss ./resources/sass/test.scss ./resources/sass/diary.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49533,7 +49544,8 @@ __webpack_require__(/*! /home/ec2-user/environment/health/resources/sass/home.sc
 __webpack_require__(/*! /home/ec2-user/environment/health/resources/sass/admin.scss */"./resources/sass/admin.scss");
 __webpack_require__(/*! /home/ec2-user/environment/health/resources/sass/profile_front.scss */"./resources/sass/profile_front.scss");
 __webpack_require__(/*! /home/ec2-user/environment/health/resources/sass/calendar_front.scss */"./resources/sass/calendar_front.scss");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/health/resources/sass/test.scss */"./resources/sass/test.scss");
+__webpack_require__(/*! /home/ec2-user/environment/health/resources/sass/test.scss */"./resources/sass/test.scss");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/health/resources/sass/diary.scss */"./resources/sass/diary.scss");
 
 
 /***/ })

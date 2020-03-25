@@ -147,11 +147,14 @@ return [
 
     'attributes' => [
         'name' => '名前',
-            'gender' => '性別',
-            'birthday' => '誕生日',
-            'age' => '年齢',
-            'goal' => '目標',
-            'day' => '日付',
-        'description' => '説明'],
+        'gender' => '性別',
+        'birthday' => '誕生日',
+        'age' => '年齢',
+        'goal' => '目標',
+        'day' => '日付',
+        'description' => '説明',
+        'title' =>'タイトル',
+        'body' => '本文'
+    ],
 
 ];

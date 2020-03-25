@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,11 @@
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ secure_asset('css/profile_front.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/diary.css') }}" rel="stylesheet">
     
-</head>
+    </head>
 
- <body>
+    <body>
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
