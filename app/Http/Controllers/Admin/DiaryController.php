@@ -29,7 +29,8 @@ class DiaryController extends Controller
         unset($form['_token']);
         unset($form['image']);
             
-        $diary->fill($form)->save();
+        $diary->fill($form);
+        $diary->save();
         return redirect('admin/diary/create');
     }
     
