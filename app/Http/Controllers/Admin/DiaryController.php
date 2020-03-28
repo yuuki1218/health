@@ -61,7 +61,7 @@ class DiaryController extends Controller
         $diary = Diary::find($request->id);
         $diary_form = $request->all();
         if (isset($diary_form['image'])) {
-            $path = Storage::disk('s3')->putFile('/', $form['image'], 'public');
+            $path = Storage::disk('s3')->putFile('/', $diary_form['image'], 'public');
             $diary->image_path = Storage::disk('s3')->url($path);
             unset($diary_form['image']);
         } elseif (isset($request->remove)) {
