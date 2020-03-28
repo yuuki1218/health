@@ -7,3 +7,20 @@ body {
   height: 80px;
 }
 
+.headline .caption {
+  position: relative;
+  width: 350px;
+}
+
+.title {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.title h1 {
+  color: #000;
+  font-size: 1.2em;
+}
+
