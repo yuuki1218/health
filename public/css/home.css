@@ -46,6 +46,7 @@ body {
 
 body {
   background: url(/images/avenue-2215317_1280.jpg?88cd781c25e415dcab8027712ae3e184);
+  background-size: cover;
 }
 
 .link {
@@ -64,6 +65,7 @@ body {
   margin: 20px;
   text-align: center;
   line-height: 80px;
+  font-size: 15px;
 }
 
 .box:hover {

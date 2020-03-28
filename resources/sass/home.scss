@@ -49,6 +49,7 @@ body {
 
 body {
     background: url("avenue-2215317_1280.jpg");
+    background-size: cover;
 }
 .link {
     color: white;
@@ -69,6 +70,7 @@ body {
     margin: 20px ;
     text-align: center;
     line-height: 80px;
+    font-size: 15px;
 }
 
 .box:hover {

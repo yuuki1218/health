@@ -52,6 +52,7 @@
                 </div>
                 <hr color="#c0c0c0">
                 @endforeach
+                <a type="submit" class="btn btn-primary" href="{{ action('CalendarController@home') }}">ホーム画面</a>
             </div>
         </div>
     </div>

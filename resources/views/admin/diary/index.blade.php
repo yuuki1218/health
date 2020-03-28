@@ -54,6 +54,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <a type="submit" class="btn btn-primary" href="{{ action('DiaryController@index') }}">閲覧画面</a>
                 </div>
             </div>
         </div>
